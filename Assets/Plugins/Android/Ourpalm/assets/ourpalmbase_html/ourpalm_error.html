@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="oppage-usetype" content="sdk2.0">
+            <script src="jquery.js" type="text/javascript"></script>
+            <title>SDK - 错误提示</title>
+            <style>
+                html{font-size:281.25%;-webkit-tap-highlight-color:transparent;width:100%;height:100%;overflow:hidden;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}body{width:100%;height:100%;color:#FFF;font-size:.25rem;font-family:'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;color:#434343;}body,p{margin:0;padding:0;}
+                .pop-box{position:fixed;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.4);top:0;}.error-box{position:absolute;border-radius:0.18rem;top:16%;bottom:16%;left:19%;right:19%;background:#F5F5F5;}.header{background:#45d1e6;border-radius: 0.18rem 0.18rem 0 0;height: 0.8rem;}.error-box section{background:#fff;border-radius:0.1rem;top:1rem;bottom:0.2rem;left:0.2rem;position:absolute;right:0.2rem;text-align:center;font-size:.32rem;padding-top:4%;}
+                .error-box .icon{background:url(http://content.gamebean.com/image/sdk/new/error_icon01.png) no-repeat;background-size:1.49rem auto;width:1.49rem;height:1.49rem;display:block;margin:3% auto;}.refresh-btn{border-radius:.1rem;background:#FAFAFA;display:inline-block;width:60%;padding:.16rem 0;border:1px solid #EBEBEB;color:#A0A0A0;}
+                @media screen and (min-width:640px){html{font-size:312.5%;}}
+                @media screen and (min-width:960px){html{font-size:375%;}}
+                @media screen and (min-width:1024px){html{font-size:375%;}.error-box{top:25%;bottom:25%;left:20%;right:20%;}.error-box section{padding:6%;}.error-box .icon{margin:6% auto;}}
+                </style>
+            <body>
+                <div class="pop-box">
+                    <div class="error-box">
+                        <!--顶部 start:-->
+                        <header class="header"></header>
+                        <!--顶部 end-->
+                        <section>
+                            <P>网络异常，请刷新后再试</P>
+                            <p class="icon"></p>
+                            <p class="refresh-btn" onclick="javascript:window.location.hash='#event=close'">关&nbsp;&nbsp;闭</p>
+                        </section>
+                    </div>
+                </div>
+            </body>
+</html>
