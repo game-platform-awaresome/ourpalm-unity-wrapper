@@ -1,20 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.nebulium.min" android:versionName="1.0" android:versionCode="1" android:installLocation="preferExternal">
   <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
-  <application android:icon="@drawable/app_icon" android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:debuggable="false">
-    <activity android:name="com.unity3d.player.UnityPlayerActivity" android:label="@string/app_name" android:screenOrientation="fullSensor" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale">
+  <application android:icon="@drawable/app_icon"
+    android:name="ourpalm.android.channels.Info.Ourpalm_Channels_Application"
+    android:allowBackup="true"
+    android:theme="@android:style/Theme.NoTitleBar"
+    android:label="@string/app_name"
+    android:debuggable="false">
+    <activity android:name="com.nebulium.min.UnityPlayerActivity" android:label="@string/app_name" android:screenOrientation="fullSensor" android:launchMode="standard" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
       <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
       <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
     </activity>
+    <!-- 闪屏配置 -->
+    <activity android:name="ourpalm.android.logo.Ourpalm_LogoScreen_Activity" android:configChanges="orientation|keyboardHidden|screenSize|screenLayout" android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="landscape">  
+      <intent-filter>  
+        <action android:name="android.intent.action.MAIN"/>   
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <!-- 闪屏默认配置 -->
+    <meta-data android:name="ourplam_logo_flag" android:value="1"/>
+    <!-- 闪屏时间为 2S -->
+    <meta-data android:name="ourplam_logotime" android:value="2000"/>
+    <!-- 游戏自己的启动activity类名，需要完整路径，必须配置 -->
+    <meta-data android:name="ourpalm_class_name" android:value="com.nebulium.min.UnityPlayerActivity"/>
+    <!-- 游戏请配置自己游戏的展示类型，竖屏游戏请配置成 portrait，横屏游戏请配置成landscape -->
+    <meta-data android:name="ourpalm_screenOrientation" android:value="portrait" />
+    <meta-data android:name="ourpalm_gametype_console" android:value="false" />
+    <!-- 客服反馈功能Activity -->
+    <activity android:name="ourpalm.android.opservice.Ourpalm_OpService_Activity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+    </activity>
+    <!-- BASE SDK中上传崩溃日志的服务 V3.2.1版本新增加 -->
+    <service android:name="ourpalm.android.c.Ourpalm_CrashService" android:process=":ourpalmCrash">
+      <intent-filter>
+        <action android:name="ourpalm.UpCrashLog">
+        </action>
+      </intent-filter>
+    </service>
+    <!-- 推送服务-->
+    <service android:name="ourpalm.android.PushServer.Ourpalm_PushServer" android:enabled="true" android:exported="false" android:label="PushService" android:persistent="true" android:process=":ourpalmPushservice">
+      <intent-filter>
+        <action android:name="Ourpalm_PushServer">
+          <category android:name="android.intent.category.default">
+          </category>
+        </action>
+      </intent-filter>
+    </service>
+    <!-- 广播注册 -->
+    <receiver android:name="ourpalm.android.PushServer.Ourpalm_Alarm_BroadcastReceiver">
+      <intent-filter android:priority="1000">
+        <action android:name="android.intent.action.BOOT_COMPLETED">
+          <action android:name="android.net.conn.CONNECTIVITY_CHANGE">
+            <action android:name="ourpalm.pushserver.notice.ourpalm_package_name">
+            </action>
+          </action>
+        </action>
+      </intent-filter>
+    </receiver>
+    <!--<android:authorities="ourpalm_package_name.AUTH_PUSHID" />-->
+    <provider android:name="ourpalm.android.push.Ourpalm_PushId_Provider" android:authorities="ourpalm_package_name.AUTH_PUSHID" android:exported="true">
+    </provider>
   </application>
   <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="23" />
   <uses-feature android:glEsVersion="0x00020000" />
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />  
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />  
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />  
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />  
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />  
+  <uses-permission android:name="android.permission.INTERNET" />  
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />  
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />  
   <uses-feature android:name="android.hardware.touchscreen" />
   <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
   <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
