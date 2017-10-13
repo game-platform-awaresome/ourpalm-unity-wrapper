@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ourpalm_android_sdk_base_application">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Ourpalm/libs/ourpalm_android_sdk_base_application.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

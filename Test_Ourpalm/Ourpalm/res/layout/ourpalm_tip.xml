@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ourpalm_tip_linearlayout"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:layout_gravity="center"
+    android:background="@drawable/ourpalm_ui_tipbox_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/ourpalm_account_ui_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@string/ourpalm_exit_title"
+        android:textColor="@color/ourpalm_color_434343"
+        android:textSize="@dimen/ourpalm_ui_tip_textSize_22" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/ourpalm_color_c9c9c9"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:fadeScrollbars="true"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/ourpalm_tip_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"
+            android:textColor="@color/ourpalm_color_434343"
+            android:textSize="@dimen/ourpalm_ui_tip_textSize_16" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:gravity="bottom|center"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="4dp" >
+
+        <Button
+            android:id="@+id/ourpalm_tip_cancel_btn"
+            android:layout_width="120dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ourpalm_button_737373_background"
+            android:text="@string/ourpalm_dialog_cancel"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ourpalm_login_ui_pulllist_textsize18" />
+
+        <Button
+            android:id="@+id/ourpalm_tip_confirm_btn"
+            android:layout_width="120dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ourpalm_button_blue_background"
+            android:text="@string/ourpalm_dialog_confirm"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ourpalm_login_ui_pulllist_textsize18" />
+    </LinearLayout>
+
+</LinearLayout>

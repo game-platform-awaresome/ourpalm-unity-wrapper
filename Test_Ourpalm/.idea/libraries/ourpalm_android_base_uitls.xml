@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ourpalm_android_base_uitls">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Ourpalm/libs/ourpalm_android_base_uitls.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

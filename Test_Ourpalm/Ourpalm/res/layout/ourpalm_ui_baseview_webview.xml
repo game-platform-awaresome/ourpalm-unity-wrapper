@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/ourpalm_ui_webview_closelayout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#434343"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/ourpalm_ui_webview_closebtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/ourpalm_ui_closebtn" />
+    </RelativeLayout>
+
+    <ourpalm.android.utils.jsbridge.BridgeWebView
+        android:id="@+id/ourpalm_ui_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

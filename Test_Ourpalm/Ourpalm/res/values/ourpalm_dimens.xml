@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 官网UI Title -->
+    <dimen name="ourpalm_ucenter_ui_title_marginTop">10dp</dimen>
+    <dimen name="ourpalm_ucenter_ui_title_height">38dp</dimen>
+    <dimen name="ourpalm_ucenter_ui_title_icon">20dp</dimen>
+    <dimen name="ourpalm_ucenter_ui_title_text_marginLeft">10dp</dimen>
+    <dimen name="ourpalm_ucenter_ui_title_text_size">20dp</dimen>
+
+    <!-- 官网登陆页面参数 -->
+    <dimen name="ourpalm_login_width">264dp</dimen>
+    <dimen name="ourpalm_login_height">254dp</dimen>
+    <dimen name="ourpalm_login_input_height">36dp</dimen>
+    <dimen name="ourpalm_login_interval_marginTop">10dp</dimen>
+    <dimen name="ourpalm_login_input_icon_marginleft">12dp</dimen>
+    <dimen name="ourpalm_login_input_icon_marginRight">10dp</dimen>
+    <dimen name="ourpalm_login_marginleft">16dp</dimen>
+    <dimen name="ourpalm_login_input_edit_size">12dp</dimen>
+    <dimen name="ourpalm_login_findpwd_icon_size">12dp</dimen>
+    <dimen name="ourpalm_login_findpwd_text_size">14dp</dimen>
+    <dimen name="ourpalm_login_button_height">32dp</dimen>
+    <dimen name="ourpalm_login_button_text_size">12dp</dimen>
+
+    <!-- 自动登录展示页面 -->
+    <dimen name="ourpalm_autologin_minwidth">252dp</dimen>
+    <dimen name="ourpalm_autologin_minheight">64dp</dimen>
+    <dimen name="ourpalm_autologin_textsize15">15dp</dimen>
+    <dimen name="ourpalm_autologin_textsize24">24dp</dimen>
+
+    <!-- 账户下拉列表 -->
+    <dimen name="ourpalm_login_ui_pulllist_width">246dp</dimen>
+    <dimen name="ourpalm_login_ui_pulllist_height">198dp</dimen>
+    <dimen name="ourpalm_login_ui_pulllist_textsize20">20dp</dimen>
+    <dimen name="ourpalm_login_ui_pulllist_textsize18">18dp</dimen>
+    <dimen name="ourpalm_login_ui_pulllist_can_bt_height">35dp</dimen>
+    <dimen name="ourpalm_login_ui_pulllist_icon_size">20dp</dimen>
+
+    <!-- 更新 -->
+    <dimen name="ourpalm_update_dialog_width">310dp</dimen>
+    <dimen name="ourpalm_update_dialog_height">290dp</dimen>
+
+    <!-- TIP -->
+    <dimen name="ourpalm_ui_tip_textSize_22">22dp</dimen>
+    <dimen name="ourpalm_ui_tip_textSize_20">20dp</dimen>
+    <dimen name="ourpalm_ui_tip_textSize_18">18dp</dimen>
+    <dimen name="ourpalm_ui_tip_textSize_16">16dp</dimen>
+    <dimen name="ourpalm_ui_tip_textSize_15">15dp</dimen>
+    <dimen name="ourpalm_ui_tip_textSize_14">14dp</dimen>
+    <dimen name="ourpalm_ui_tip_textSize_12">12dp</dimen>
+
+</resources>

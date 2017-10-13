@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ourpalm_BridgeWebView">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Ourpalm/libs/ourpalm_BridgeWebView.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
