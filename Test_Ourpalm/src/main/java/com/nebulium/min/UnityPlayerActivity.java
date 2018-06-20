@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import java.util.HashMap;
+
 import ourpalm.android.account.Ourpalm_Account_Interface;
 import ourpalm.android.account.net.Ourpalm_Account_Net;
 import ourpalm.android.callback.Ourpalm_CallBackListener;
@@ -21,6 +23,7 @@ import ourpalm.android.callback.Ourpalm_PaymentCallBack;
 import ourpalm.android.info.GameInfo;
 import ourpalm.android.opservice.Ourpalm_OpService_Entry;
 import ourpalm.android.pay.Ourpalm_Entry;
+import ourpalm.android.servicecode.entry.Ourpalm_ServiceCode_Entry;
 import ourpalm.tools.android.logs.Logs;
 
 public class UnityPlayerActivity extends Activity
@@ -137,6 +140,48 @@ public class UnityPlayerActivity extends Activity
     }
 
 	/**
+	 * 获取ServiceCode
+	 *
+	 * @param   gameResVer
+	 * 游戏资源版本号,无资源版本号可传""
+	 * @return String
+	 */
+
+	public String OurpalmGetServiceCode(String gameResVer)
+	{
+		return Ourpalm_ServiceCode_Entry.getInstance(this).Ourpalm_getServiceCode("");
+	}
+
+	/**
+	 * @return 业务ID
+	 */
+	public String OurpalmGetServiceId()
+	{
+		return Ourpalm_Entry.getInstance(this).getServiceId();
+	}
+
+	/**
+	 * 游戏端需发送的统计日志
+	 * @param logID
+	 * 日志ID
+	 * @param logKey
+	 * 日志KEY
+	 * @parammap
+	 * 日志属性MAP
+	 */
+	public void OurpalmSendGameInfoLog(String logID, String logKey, int level, String[] params)
+	{
+		HashMap<String,Object> map = new HashMap<>();
+		for (int i = 0; i < params.length - 1; i += 2) {
+			map.put((String) params[i], params[i + 1]);
+		}
+		map.put("roleLevel", level);
+		map.put("roleVipLevel", 0);
+
+		Ourpalm_Entry.getInstance(this).Ourpalm_SendGameInfoLog(logID, logKey, map);
+	}
+
+	/**
 	 * 账号切换
 	 */
 	public void OurpalmSwitchAccount()
@@ -248,6 +293,8 @@ public class UnityPlayerActivity extends Activity
                     @Override
                     public void Ourpalm_OrderSuccess(int code, String ssid, String pbid) {
                         // TODO Auto-generated method stub
+						Log.i(LOG_TAG_OURPALM, "Ourpalm_OrderSuccess code = " + code + "ssid  == " + ssid + " , pbid = "+ pbid);
+						UnityPlayer.UnitySendMessage("Ourpalm", "OrderSuccess", String.format("%d,%s,%s", code, ssid, pbid));
                     }
                 }, rolelv, roleviplv);
     }
